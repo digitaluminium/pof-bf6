@@ -128,12 +128,12 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 3px;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border: 1px solid rgba(74, 124, 89, 0.4);
     color: #4a7c59;
     text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
     transition: all 0.2s ease;
     position: relative;
@@ -141,7 +141,7 @@ main {
 }
 
 .hud-btn i {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #4a7c59;
     transition: all 0.2s ease;
 }
@@ -487,13 +487,11 @@ main {
         transform: scale(0.5);
         filter: brightness(3);
     }
-
     50% {
         opacity: 1;
         transform: scale(1.1);
         filter: brightness(2);
     }
-
     100% {
         opacity: 1;
         transform: scale(1);
@@ -506,7 +504,6 @@ main {
         opacity: 0;
         transform: translateX(-30px);
     }
-
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -517,19 +514,15 @@ main {
     0% {
         opacity: 0;
     }
-
     25% {
         opacity: 1;
     }
-
     50% {
         opacity: 0;
     }
-
     75% {
         opacity: 1;
     }
-
     100% {
         opacity: 1;
     }
@@ -559,8 +552,8 @@ main {
 }
 
 .logo img {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.5)) brightness(1.1);
 }
 
@@ -575,7 +568,7 @@ main {
 
 .hero-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 7rem;
+    font-size: 5.5rem;
     font-weight: 700;
     color: var(--text-primary);
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);

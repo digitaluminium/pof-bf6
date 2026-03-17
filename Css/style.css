@@ -1021,6 +1021,13 @@ footer {
 .burger-menu {
     display: none;
 }
+.burger-menu {
+    pointer-events: none;
+}
+
+.burger-menu.open {
+    pointer-events: all;
+}
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1024px) {

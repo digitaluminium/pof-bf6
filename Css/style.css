@@ -870,6 +870,7 @@ main {
 /* ===== DISCORD PAGE ===== */
 .discord-page {
     height: calc(100vh - 70px);
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -946,6 +947,7 @@ main {
     gap: 30px;
     border-left: 1px solid rgba(74, 124, 89, 0.3);
     padding-left: 60px;
+    min-width: 0;
 }
 
 .discord-desc {
@@ -1705,7 +1707,49 @@ footer {
         font-size: 0.65rem;
         letter-spacing: 2px;
     }
+    .discord-page {
+    padding: 20px 40px;
+    gap: 20px;
+    justify-content: flex-start;
+}
 
+.discord-titre {
+    gap: 15px;
+}
+
+.discord-blason {
+    width: 60px;
+    height: 60px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+}
+
+#radarDiscord {
+    width: 180px;
+    height: 180px;
+}
+
+.discord-contenu {
+    gap: 30px;
+}
+
+.discord-right {
+    padding-left: 30px;
+    gap: 15px;
+}
+
+.discord-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.btn-discord {
+    padding: 8px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
     footer {
         flex-direction: row;
         gap: 10px;

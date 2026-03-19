@@ -171,12 +171,13 @@ let pageCourante = window.location.pathname.split('/').pop();
 if (pageCourante === '' || pageCourante === '/' || pageCourante === 'index.html') pageCourante = 'index.html';
 
 liens.forEach(lien => {
-    lien.classList.remove('active');
     const href = lien.getAttribute('href');
     if (!href) return;
     const nomHref = href.split('/').pop();
     if (nomHref === pageCourante) {
         lien.classList.add('active');
+    } else {
+        lien.classList.remove('active');
     }
 });
 

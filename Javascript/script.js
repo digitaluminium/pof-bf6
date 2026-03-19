@@ -168,22 +168,24 @@ function lancerRadar() {
 // ===== ACTIVE NAV =====
 const liens = document.querySelectorAll('.hud-btn');
 const pathname = window.location.pathname;
-const pageCourante = pathname.split('/').pop() || 'index.html';
-const estAccueil = pathname === '/' || pathname === '/index.html' || pageCourante === 'index.html';
 
 liens.forEach(lien => {
     const href = lien.getAttribute('href');
     if (!href) return;
-    const nomHref = href.split('/').pop();
     
-    if (estAccueil && nomHref === 'index.html') {
-        lien.classList.add('active');
-    } else if (!estAccueil && nomHref === pageCourante) {
+    // Normaliser le href et le pathname pour comparaison
+    const hrefNorm = href.replace('index.html', '/').replace('.html', '');
+    const pathNorm = pathname.endsWith('/') && pathname !== '/' 
+        ? pathname.slice(0, -1) 
+        : pathname;
+    
+    if (hrefNorm === pathNorm || 
+        (pathname === '/' && (href === 'index.html' || href === '/'))) {
         lien.classList.add('active');
     } else {
         lien.classList.remove('active');
     }
-})
+});
 
 // ===== HORLOGE MILITAIRE =====
 function mettreAjourHorloge() {

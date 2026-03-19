@@ -167,12 +167,14 @@ function lancerRadar() {
 
 // ===== ACTIVE NAV =====
 const liens = document.querySelectorAll('.hud-btn');
-const pageCourante = window.location.pathname.split('/').pop();
+const pageCourante = window.location.pathname.split('/').pop() || 'index.html';
 
 liens.forEach(lien => {
     lien.classList.remove('active');
     const href = lien.getAttribute('href');
-    if (href === pageCourante || (pageCourante === '' && href === 'index.html')) {
+    if (!href) return;
+    const nomHref = href.split('/').pop();
+    if (nomHref === pageCourante) {
         lien.classList.add('active');
     }
 });

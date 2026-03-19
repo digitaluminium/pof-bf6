@@ -487,11 +487,13 @@ main {
         transform: scale(0.5);
         filter: brightness(3);
     }
+
     50% {
         opacity: 1;
         transform: scale(1.1);
         filter: brightness(2);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -504,6 +506,7 @@ main {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -514,15 +517,19 @@ main {
     0% {
         opacity: 0;
     }
+
     25% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
+
     75% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
     }
@@ -586,40 +593,6 @@ main {
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.hero-alert {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(224, 154, 154, 0.15);
-    border: 1px solid rgba(85, 63, 63, 0.329);
-    border-radius: 4px;
-    padding: 8px 16px;
-    margin-bottom: 20px;
-    width: fit-content;
-    margin-left: auto;
-}
-
-.hero-alert-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ff4444;
-    box-shadow: 0 0 8px #ff4444;
-    animation: voyant 0.6s steps(1) infinite;
-    flex-shrink: 0;
-}
-
-.hero-alert-text {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: #ff4444;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px;
-}
 .hero-ticker {
     display: flex;
     align-items: center;
@@ -627,10 +600,10 @@ main {
     border: 1px solid #ff4444;
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    width: 500px;
+    max-width: 100%;
     margin-left: auto;
-    width: fit-content;
-    max-width: 500px;
 }
 
 .hero-ticker-label {
@@ -642,13 +615,14 @@ main {
     background: #ff4444;
     padding: 8px 14px;
     white-space: nowrap;
-    animation: voyant 0.6s steps(1) infinite;
+    flex-shrink: 0;
 }
 
 .hero-ticker-track {
     overflow: hidden;
-    width: 350px;
-    padding: 0 10px;
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
 }
 
 .hero-ticker-content {
@@ -658,13 +632,15 @@ main {
     color: white;
     text-transform: uppercase;
     white-space: nowrap;
-    animation: ticker 14s linear infinite;
+    display: inline-block;
+    animation: ticker 12s linear infinite;
 }
 
 @keyframes ticker {
-    0% { transform: translateX(100%); }
+    0% { transform: translateX(30%); }
     100% { transform: translateX(-100%); }
 }
+
 /* ===== A PROPOS ===== */
 .apropos {
     padding: 80px 40px;
@@ -1092,6 +1068,7 @@ footer {
     color: #ffbd2e;
     animation: voyant 1s steps(1) infinite;
 }
+
 .burger-btn {
     display: none;
 }
@@ -1269,20 +1246,23 @@ footer {
     .event-date {
         font-size: 0.65rem;
     }
+
     /* BOUTONS DISCORD */
-.btn-discord {
-    padding: 10px 20px;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    gap: 8px;
-}
-.btn-discord i {
-    font-size: 1rem;
-}
+    .btn-discord {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        gap: 8px;
+    }
+
+    .btn-discord i {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
-   /* CACHER NAV NORMALE */
+
+    /* CACHER NAV NORMALE */
     .hud-nav-center {
         display: none;
     }
@@ -1311,9 +1291,11 @@ footer {
     .burger-btn.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
+
     .burger-btn.open span:nth-child(2) {
         opacity: 0;
     }
+
     .burger-btn.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
@@ -1367,64 +1349,78 @@ footer {
         gap: 4px;
         padding: 0 6px;
     }
+
     .gauge-bar {
         width: 35px;
     }
+
     .hud-clock {
         font-size: 0.85rem;
         letter-spacing: 1px;
     }
+
     .hero-title {
         font-size: 2.5rem;
         letter-spacing: 3px;
     }
+
     .clan-tag {
         font-size: 0.85rem;
         letter-spacing: 1px;
     }
+
     .hero-subtitle {
         font-size: 0.85rem;
         letter-spacing: 1px;
     }
+
     .btn-join {
         padding: 10px 25px;
         font-size: 0.75rem;
         letter-spacing: 2px;
     }
+
     .logo img {
         width: 120px;
         height: 120px;
     }
+
     .footer-reseaux {
         font-size: 0.65rem;
         letter-spacing: 2px;
         padding: 5px 12px;
     }
+
     .footer-reseaux i {
         font-size: 1rem;
     }
+
     footer {
         gap: 20px;
     }
 }
 
 @media (max-width: 480px) {
-     /* NAVBAR */
+
+    /* NAVBAR */
     .hud-nav-left {
         min-width: 70px;
     }
+
     .gauge-bar {
         width: 25px;
     }
+
     .gauge-label {
         font-size: 0.5rem;
     }
+
     .hud-clock {
         font-size: 0.75rem;
         letter-spacing: 0px;
     }
 
-        /* CACHER VOYANTS */
+    /* CACHER VOYANTS */
     .hud-voyants {
         display: none;
     }
@@ -1448,54 +1444,64 @@ footer {
         font-size: 0.45rem;
         letter-spacing: 0px;
     }
+
     /* HERO */
     .hero {
         justify-content: center;
     }
+
     .hero-content {
         margin: 0;
         text-align: center;
         padding: 15px;
         background: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 2px;        
+        padding: 10px;
+        border-radius: 2px;
     }
+
     .hero-title {
         font-size: 1.5rem;
         letter-spacing: 2px;
     }
+
     .clan-tag {
         font-size: 0.7rem;
         letter-spacing: 1px;
         color: white;
     }
+
     .hero-subtitle {
         font-size: 0.7rem;
         letter-spacing: 1px;
         color: white;
     }
+
     .logo img {
         width: 90px;
         height: 90px;
     }
+
     .btn-join {
         padding: 8px 20px;
         font-size: 0.7rem;
         letter-spacing: 1px;
     }
-   
+
     /* CARTES - 1 colonne */
     .apropos-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .evenement-grid {
         grid-template-columns: 1fr;
     }
+
     .section-title {
         font-size: 1.5rem;
         letter-spacing: 2px;
     }
+
     .apropos {
         padding: 40px 15px;
     }
@@ -1506,6 +1512,7 @@ footer {
         text-align: center;
         padding: 20px 15px;
     }
+
     .citation-texte {
         text-align: center;
     }
@@ -1516,10 +1523,12 @@ footer {
         gap: 8px;
         padding: 10px 15px;
     }
-    .footer-content{
+
+    .footer-content {
         width: 100%;
         justify-content: center;
     }
+
     .footer-reseaux {
         width: 100%;
         justify-content: center;
@@ -1531,18 +1540,22 @@ footer {
         gap: 20px;
         height: auto;
     }
+
     .discord-titre {
         flex-direction: column;
         gap: 10px;
     }
+
     .discord-blason {
         width: 100px;
         height: 100px;
     }
+
     .discord-contenu {
         flex-direction: column;
         gap: 20px;
     }
+
     .discord-right {
         border-left: none;
         border-top: 1px solid rgba(74, 124, 89, 0.3);
@@ -1551,13 +1564,16 @@ footer {
         align-items: center;
         text-align: center;
     }
+
     #radarDiscord {
         width: 220px;
         height: 220px;
     }
+
     .discord-desc {
         font-size: 0.85rem;
     }
+
     .btn-discord {
         padding: 8px 15px;
         font-size: 0.7rem;

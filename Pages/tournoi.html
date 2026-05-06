@@ -1,64 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tournoi BF6 — Les Potes Ö Feu</title>
   <link rel="stylesheet" href="../Css/style.css">
   <link rel="stylesheet" href="../Css/tournoi.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="../Javascript/script.js" defer></script>
   <script src="../Javascript/tournoi.js" defer></script>
 </head>
+
 <body>
 
-  <div class="tournoi-container">
-
-    <div class="tournoi-header">
-      <h1>⚔️ Tournoi BF6</h1>
-      <p style="color:#888; margin-bottom:8px;">Les Potes Ö Feu — Saison 1</p>
-      <div class="live-badge">
-        <div class="live-dot"></div>
-        LIVE
+  <!-- HUD CONNEXION -->
+  <div class="hud-overlay" id="hudOverlay">
+    <div class="hud-box" id="hudBox">
+      <p class="hud-titre">⬡ SYSTÈME DE COMMANDEMENT PÖF ⬡</p>
+      <p class="hud-text" id="hudText"></p>
+      <div class="hud-bar">
+        <div class="hud-progress" id="hudProgress"></div>
       </div>
     </div>
+  </div>
 
-    <div class="global-stats">
-      <div class="stat-card">
-        <div class="value" id="total-players">—</div>
-        <div class="label">Joueurs</div>
+  <!-- NAVBAR HUD -->
+  <header class="hud-navbar">
+    <div class="hud-nav-left">
+      <div class="hud-gauge">
+        <span class="gauge-label">FUEL</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="value" id="total-kills">—</div>
-        <div class="label">Kills totaux</div>
-      </div>
-      <div class="stat-card">
-        <div class="value" id="best-kd">—</div>
-        <div class="label">Meilleur K/D</div>
-      </div>
-    </div>
-
-    <div class="leaderboard">
-      <div class="leaderboard-header">
-        <div>#</div>
-        <div>Joueur</div>
-        <div style="text-align:center">K/D</div>
-        <div style="text-align:center">Kills</div>
-        <div style="text-align:center" class="col-wins">Wins</div>
-      </div>
-      <div id="leaderboard-body">
-        <div class="loading">
-          <div class="loading-spinner"></div>
-          Chargement du classement...
+      <div class="hud-gauge">
+        <span class="gauge-label">AMMO</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill ammo"></div>
         </div>
       </div>
     </div>
 
-    <p style="text-align:center; color:#555; font-size:0.8rem; margin-top:1rem;">
-      Mis à jour automatiquement toutes les 60 secondes
-    </p>
+    <!-- VOYANTS GAUCHE -->
+    <div class="hud-voyants">
+      <div class="voyant green">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">ONLINE</span>
+      </div>
+      <div class="voyant red">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">THREAT</span>
+      </div>
+      <div class="voyant red">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">ALERT</span>
+      </div>
+    </div>
 
-  </div>
+    <!-- CENTER -->
+    <nav class="hud-nav-center">
+      <a href="../index.html" class="hud-btn">
+        <i class="fas fa-crosshairs"></i>
+        <span>ACCUEIL</span>
+      </a>
+      <a href="apropos.html" class="hud-btn">
+        <i class="fas fa-users"></i>
+        <span>A PROPOS</span>
+      </a>
+      <a href="evenement.html" class="hud-btn">
+        <i class="fas fa-film"></i>
+        <span>ÉVÉNEMENTS</span>
+      </a>
+      <a href="tournoi.html" class="hud-btn active">
+        <i class="fas fa-trophy"></i>
+        <span>TOURNOI</span>
+      </a>
+      <a href="reseau.html" class="hud-btn">
+        <i class="fas fa-wifi"></i>
+        <span>RÉSEAUX</span>
+      </a>
+    </nav>
 
-  
+    <!-- BURGER -->
+    <button class="burger-btn" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- MENU BURGER -->
+    <nav class="burger-menu" id="burgerMenu">
+      <a href="../index.html" class="hud-btn"><i class="fas fa-crosshairs"></i><span>ACCUEIL</span></a>
+      <a href="apropos.html" class="hud-btn"><i class="fas fa-users"></i><span>A PROPOS</span></a>
+      <a href="tournoi.html" class="hud-btn active"><i class="fas fa-trophy"></i><span>TOURNOI</span></a>
+      <a href="evenement.html" class="hud-btn"><i class="fas fa-film"></i><span>EVENEMENTS</span></a>
+      <a href="reseau.html" class="hud-btn"><i class="fas fa-satellite-dish"></i><span>RÉSEAUX</span></a>
+    </nav>
+
+    <!-- VOYANTS DROITE -->
+    <div class="hud-voyants">
+      <div class="voyant green">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">COM</span>
+      </div>
+      <div class="voyant red clignotant">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">ENG</span>
+      </div>
+      <div class="voyant yellow">
+        <span class="voyant-light"></span>
+        <span class="voyant-label">NAV</span>
+      </div>
+    </div>
+
+    <div class="hud-nav-right">
+      <div class="hud-clock" id="hudClock">00:00:00</div>
+      <div class="hud-coords">LAT: 48°51'N<br>LON: 2°21'E</div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="tournoi-container">
+
+      <div class="tournoi-header">
+        <h1>⚔️ TOURNOI BF6</h1>
+        <p>Les Potes Ö Feu — Saison 1</p>
+        <div class="live-badge">
+          <div class="live-dot"></div>
+          LIVE
+        </div>
+      </div>
+
+      <!-- Stats globales -->
+      <div class="global-stats">
+        <div class="stat-card">
+          <div class="value" id="total-players">—</div>
+          <div class="label">Joueurs</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="total-kills">—</div>
+          <div class="label">Kills totaux</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="best-kd">—</div>
+          <div class="label">Meilleur K/D</div>
+        </div>
+      </div>
+
+      <!-- Classement -->
+      <div class="leaderboard">
+        <div class="leaderboard-header">
+          <div>#</div>
+          <div>Joueur</div>
+          <div style="text-align:center">K/D</div>
+          <div style="text-align:center">Kills</div>
+          <div style="text-align:center" class="col-wins">Wins</div>
+        </div>
+        <div id="leaderboard-body">
+          <div class="loading">
+            <div class="loading-spinner"></div>
+            CHARGEMENT DU CLASSEMENT...
+          </div>
+        </div>
+      </div>
+
+      <p class="refresh-info">
+        ⟳ Mis à jour automatiquement toutes les 60 secondes
+      </p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <a href="reseau.html" class="footer-reseaux">
+        <i class="fab fa-facebook"></i>
+        REJOINS NOUS SUR FACEBOOK
+      </a>
+    </div>
+    <div class="footer-content">
+      <a href="reseau.html" class="footer-reseaux">
+        <i class="fab fa-discord"></i>
+        REJOINS NOUS SUR DISCORD
+      </a>
+    </div>
+  </footer>
 
 </body>
 </html>
